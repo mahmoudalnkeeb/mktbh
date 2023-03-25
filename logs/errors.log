@@ -1,0 +1,7 @@
+ [2023-03-15T15:16:41+02:00] Cannot set properties of undefined (setting 'user') 
+ error stack 
+  : TypeError: Cannot set properties of undefined (setting 'user')
+    at login (E:\1PROJECTS\C.V\RBAC\controllers\adminPanelController.js:24:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+ -----------------------
+ 

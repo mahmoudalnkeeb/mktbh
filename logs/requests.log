@@ -1,0 +1,17 @@
+::ffff:127.0.0.1 - - [15/Mar/2023:13:10:42 +0000] "GET /admin/permissions HTTP/1.1" 404 39
+::ffff:127.0.0.1 - - [15/Mar/2023:13:10:42 +0000] "GET /favicon.ico HTTP/1.1" 404 39
+::ffff:127.0.0.1 - - [15/Mar/2023:13:11:01 +0000] "GET /panel/permissions HTTP/1.1" 403 55
+::ffff:127.0.0.1 - - [15/Mar/2023:13:12:07 +0000] "GET /panel/permissions HTTP/1.1" 403 55
+::ffff:127.0.0.1 - - [15/Mar/2023:13:12:07 +0000] "GET /panel/permissions HTTP/1.1" 403 55
+::ffff:127.0.0.1 - - [15/Mar/2023:13:13:07 +0000] "GET /panel/permissions HTTP/1.1" 403 55
+::ffff:127.0.0.1 - - [15/Mar/2023:13:13:07 +0000] "GET /panel/permissions HTTP/1.1" 403 55
+::ffff:127.0.0.1 - - [15/Mar/2023:13:15:29 +0000] "POST /panel HTTP/1.1" 404 39
+::ffff:127.0.0.1 - - [15/Mar/2023:13:16:41 +0000] "POST /panel/login HTTP/1.1" 500 59
+::ffff:127.0.0.1 - - [15/Mar/2023:13:17:19 +0000] "POST /panel/login HTTP/1.1" 200 180
+::ffff:127.0.0.1 - - [15/Mar/2023:13:17:48 +0000] "GET /panel/permissions HTTP/1.1" 403 53
+::ffff:127.0.0.1 - - [15/Mar/2023:13:17:50 +0000] "GET /panel/permissions HTTP/1.1" 403 53
+::ffff:127.0.0.1 - - [15/Mar/2023:13:18:09 +0000] "GET /panel/permissions HTTP/1.1" 403 53
+::ffff:127.0.0.1 - - [15/Mar/2023:13:19:19 +0000] "GET /panel/permissions HTTP/1.1" 403 53
+::ffff:127.0.0.1 - - [15/Mar/2023:13:19:47 +0000] "GET /panel/permissions HTTP/1.1" 403 53
+::ffff:127.0.0.1 - - [15/Mar/2023:13:26:14 +0000] "POST /panel/login HTTP/1.1" 200 171
+::ffff:127.0.0.1 - - [15/Mar/2023:13:26:32 +0000] "GET /panel/permissions HTTP/1.1" 200 1714
