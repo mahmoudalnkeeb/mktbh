@@ -11,3 +11,6 @@ node_modules
 
 addadmin.js
 data.txt
+
+// dev sql test 
+*.session.sql
