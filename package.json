@@ -8,7 +8,8 @@
   "description": "",
   "scripts": {
     "start": "npm run migrate-up && node dist/server.js 1> ./logs/console.log 2> ./logs/crash.log",
-    "dev": "export ENV=development && nodemon --exec ts-node src/server.ts"
+    "dev": "export ENV=development && nodemon --exec ts-node src/server.ts",
+    "format": "prettier --write ./src"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
@@ -31,6 +32,7 @@
     "@types/morgan": "^1.9.9",
     "@types/pg": "^8.11.5",
     "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
