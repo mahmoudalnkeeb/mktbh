@@ -9,7 +9,7 @@
   "scripts": {
     "start": "npm run migrate-up && node dist/server.js 1> ./logs/console.log 2> ./logs/crash.log",
     "dev": "export ENV=development && nodemon --exec ts-node src/server.ts",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",

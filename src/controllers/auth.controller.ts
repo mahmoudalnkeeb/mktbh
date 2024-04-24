@@ -1,2 +1,1 @@
-class AuthController {
-}
+class AuthController {}

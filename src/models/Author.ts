@@ -1,11 +1,11 @@
 class Author {
-    name: string;
-    desc: string;
-    image: string;
+  name: string
+  desc: string
+  image: string
 
-    constructor(name: string, desc: string, image: string,) {
-        this.name = name;
-        this.desc = desc;
-        this.image = image;
-    }
-};
+  constructor(name: string, desc: string, image: string) {
+    this.name = name
+    this.desc = desc
+    this.image = image
+  }
+}
