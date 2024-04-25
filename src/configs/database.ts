@@ -1,14 +1,18 @@
-import { Pool } from 'pg'
-import vars from './env'
+import vars from './env';
+import Knex from 'knex';
 
-const dbConfig = {
-  user: vars.db_user,
-  password: vars.db_pass,
-  host: vars.db_host,
-  port: vars.db_port,
-  database: vars.db_name,
-}
+const knex = Knex({
+  client: 'pg',
+  connection: {
+    user: vars.db_user,
+    password: vars.db_pass,
+    host: vars.db_host,
+    port: vars.db_port,
+    database: vars.db_name,
+  },
+  migrations: {
+    directory: './src/migrations',
+  },
+});
 
-const pool = new Pool(dbConfig)
-
-export default pool
+export default knex;
