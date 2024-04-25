@@ -21,8 +21,10 @@
     "firebase": "^9.18.0",
     "joi": "^17.8.3",
     "jsonwebtoken": "^9.0.0",
+    "knex": "^3.1.0",
     "moment": "^2.29.4",
     "morgan": "^1.10.0",
+    "objection": "^3.1.4",
     "pg": "^8.9.0",
     "shortid": "^2.2.16"
   },
