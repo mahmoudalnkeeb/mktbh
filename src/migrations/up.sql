@@ -1,35 +1,69 @@
--- Create table for books
-CREATE TABLE IF NOT EXISTS books (
-    book_id SERIAL PRIMARY KEY,
-    book_name VARCHAR(200) NOT NULL,
-    book_desc TEXT NOT NULL,
-    book_author VARCHAR(100) NOT NULL,
-    book_category VARCHAR(100) NOT NULL,
-    book_image TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
--- Create table for users
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS users(
     user_id SERIAL PRIMARY KEY,
-    username VARCHAR(100) UNIQUE NOT NULL,
-    email VARCHAR(200) UNIQUE NOT NULL,
-    hashed_pass TEXT NOT NULL,
-    salt TEXT NOT NULL,
-    access_token TEXT UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
--- Create table for user_roles
-CREATE TABLE IF NOT EXISTS user_roles (
-    user_id INT,
+    email VARCHAR UNIQUE NOT NULL,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50),
+    password VARCHAR NOT NULL,
+    salt VARCHAR(255) NOT NULL,
     role VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+    created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
---
-CREATE TABLE IF NOT EXISTS author (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+
+CREATE TABLE IF NOT EXISTS books(
+    book_id SERIAL PRIMARY KEY,
+    title VARCHAR NOT NULL,
+    cover_image VARCHAR,
     description TEXT,
-    image VARCHAR(255)
+    language VARCHAR,
+    added_by INTEGER REFERENCES users(user_id),
+    created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS subjects(
+    subject_id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS authors(
+    author_id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    description TEXT,
+    image VARCHAR,
+    created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS author_books(
+    id SERIAL PRIMARY KEY,
+    author_id INTEGER REFERENCES authors(author_id),
+    book_id INTEGER REFERENCES books(book_id)
+);
+
+CREATE TABLE IF NOT EXISTS ratings(
+    rating_id SERIAL PRIMARY KEY,
+    book_id INTEGER REFERENCES books(book_id),
+    user_id INTEGER REFERENCES users(user_id),
+    rating INTEGER CHECK (rating BETWEEN 1 AND 5), -- Constraint for rating between 1 and 5
+    comment TEXT,
+    created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS book_subjects(
+    id SERIAL PRIMARY KEY,
+    book_id INTEGER REFERENCES books(book_id),
+    subject_id INTEGER REFERENCES subjects(subject_id)
+);
+
+-- Adding indexes for foreign key columns
+CREATE INDEX ON books(added_by);
+CREATE INDEX ON author_books(author_id);
+CREATE INDEX ON author_books(book_id);
+CREATE INDEX ON ratings(book_id);
+CREATE INDEX ON ratings(user_id);
+CREATE INDEX ON book_subjects(book_id);
+CREATE INDEX ON book_subjects(subject_id);
