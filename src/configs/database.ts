@@ -1,5 +1,5 @@
-import { Pool } from 'pg'
-import vars from './env'
+import { Pool } from 'pg';
+import vars from './env';
 
 const dbConfig = {
   user: vars.db_user,
@@ -7,8 +7,8 @@ const dbConfig = {
   host: vars.db_host,
   port: vars.db_port,
   database: vars.db_name,
-}
+};
 
-const pool = new Pool(dbConfig)
+const pool = new Pool(dbConfig);
 
-export default pool
+export default pool;
