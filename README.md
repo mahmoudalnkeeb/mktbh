@@ -19,7 +19,7 @@ mktbh is built using the following technologies:
 
 ## Todos
 
-- [ ] Refactor ResponseFactory to create both success and error http responses in several formats.
+- [x] Refactor ResponseFactory to create both success and error http responses in several formats.
 
 ## contributors 
     
