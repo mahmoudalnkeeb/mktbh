@@ -26,7 +26,9 @@ export default function roleChecker(
         const status = 401;
         return res
           .status(status)
-          .json({ ...ResponseFactory.create(status, 'Unauthorized B**ch') });
+          .json({
+            ...ResponseFactory.create(status, res, 'Unauthorized B**ch'),
+          });
       }
       if (whitelist.includes(userRole)) {
         next();
