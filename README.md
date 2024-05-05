@@ -13,6 +13,7 @@ mktbh is built using the following technologies:
 - TypeScript
 - Node.js
 - Express.js
+- PostgreSQL
 - EJS
 - HTMX
 
