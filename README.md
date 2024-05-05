@@ -17,6 +17,10 @@ mktbh is built using the following technologies:
 - EJS
 - HTMX
 
+## Todos
+
+- [ ] Refactor ResponseFactory to create both success and error http responses in several formats.
+
 ## contributors 
     
 - @mahmoudalnkeeb (software/backend developer)
